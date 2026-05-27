@@ -1,0 +1,19 @@
+{
+    "longqa": {
+        "message_processor": {
+            "class": "slime.rollout.message_processor_hub.qwen3_message_processor.Qwen3MessageProcessor"
+        },
+        "reward_model": {
+            "function": "remote_rm",
+            "kwargs": {
+                "remote_url": "http://172.27.15.29:7248/evaluate",
+                "input_keys": [
+                    "label",
+                    "extra_reward_info",
+                    "history"
+                ]
+            }
+        },
+        "remote_environment": {}
+    }
+}
