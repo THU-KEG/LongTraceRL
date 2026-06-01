@@ -2,7 +2,7 @@
 
 <div align="center">
 
-[![Paper](https://img.shields.io/badge/Paper-arXiv:xxxx.xxxxx-red)](https://arxiv.org/abs/2605.31584)
+[![Paper](https://img.shields.io/badge/Paper-arXiv:2605.31584-red)](https://arxiv.org/abs/2605.31584)
 [![HuggingFace](https://img.shields.io/badge/🤗%20HuggingFace-Dataset%20%26%20Model-yellow)](https://huggingface.co/collections/THU-KEG/longtracerl)
 
 *Improving long-context reasoning in LLMs via trajectory-based distractors and entity-level rubric rewards*
