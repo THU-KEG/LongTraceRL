@@ -2,7 +2,7 @@
 
 <div align="center">
 
-[![Paper](https://img.shields.io/badge/Paper-arXiv:xxxx.xxxxx-red)](https://arxiv.org/abs/xxxx.xxxxx)
+[![Paper](https://img.shields.io/badge/Paper-arXiv:xxxx.xxxxx-red)](https://arxiv.org/abs/2605.31584)
 [![HuggingFace](https://img.shields.io/badge/🤗%20HuggingFace-Dataset%20%26%20Model-yellow)](https://huggingface.co/collections/THU-KEG/longtracerl)
 
 *Improving long-context reasoning in LLMs via trajectory-based distractors and entity-level rubric rewards*
@@ -14,7 +14,7 @@
 
 - [🎯 Overview](#-overview)
 - [📈 Results](#-results)
-- [📦 Released Models](#-released-models)
+- [📦 Released Datasets & Models](#-released-datasets--models)
 - [🚀 Getting Started](#-getting-started)
 - [⚙️ Training](#%EF%B8%8F-training)
 - [📊 Evaluation](#-evaluation)
@@ -26,17 +26,29 @@
 
 **LongTraceRL** is a reinforcement learning framework for improving long-context reasoning in LLMs. It introduces two key innovations:
 - **Trajectory-Based Tiered Distractors**: Multi-hop questions are generated via knowledge graph random walks over Wikipedia, and distractors are derived from real search agent trajectories, organized into high-confusability (Tier-1: read but not cited) and low-confusability (Tier-2: retrieved but never opened) tiers, producing training contexts far more challenging than random or single-search alternatives.
-- **Entity-Level Rubric Reward**: Gold entities along each reasoning chain serve as fine-grained process supervision. Combined with a positive-only strategy (rubric credit only for correct answers), this prevents reward hacking and encourages evidence-grounded reasoning.
+<div align="center"><img src="assets/pipeline.png" width="90%"></div>
+
+- **Entity-Level Rubric Reward**: Gold entities along each reasoning chain serve as fine-grained process supervision. Combined with a positive-only strategy (rubric credit only for correct answers), it prevents reward hacking and encourages evidence-grounded reasoning.
+<div align="center"><img src="assets/rubric_reward.png" width="60%"></div>
+
 
 
 ## 📈 Results
 
 Experiments on three reasoning LLMs (4B to 30B) across five long-context benchmarks:
+<div align="center">
+<img src="assets/main_results.png" width="90%">
+</div>
 
-![Main Results](assets/main_results.png)
+## 📦 Released Datasets & Models
 
+### Dataset
 
-## 📦 Released Models
+| Dataset | Samples | Description | HuggingFace |
+|---------|---------|-------------|-------------|
+| **LongTraceRL** | 2,815 | Long-context multi-hop QA with rubric annotations | [🤗 Download](https://huggingface.co/datasets/THU-KEG/LongTraceRL) |
+
+### Models
 
 | Model | Base Model | HuggingFace |
 |-------|------------|-------------|
@@ -201,5 +213,13 @@ Training is built on the [Slime](https://github.com/THUDM/slime) RL framework. Q
 If you find our work useful, please consider citing our paper:
 
 ```bibtex
-
+@misc{lin2026longtracerllearninglongcontextreasoning,
+      title={LongTraceRL: Learning Long-Context Reasoning from Search Agent Trajectories with Rubric Rewards}, 
+      author={Nianyi Lin and Jiajie Zhang and Lei Hou and Juanzi Li},
+      year={2026},
+      eprint={2605.31584},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2605.31584}, 
+}
 ```
